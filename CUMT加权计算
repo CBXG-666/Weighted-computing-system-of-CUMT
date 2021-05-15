@@ -1,0 +1,38 @@
+# include <stdio.h>
+# include <windows.h>
+int sum;
+ double credit=0,grade=0;
+	double I,C; 
+	double X,Y,Z,V;
+int main()
+{
+	
+	printf("注：课程成绩优秀为92分\n课程成绩良好为82分\n课程成绩中等为72分\n课程成绩及格为62分\n课程成绩不及格为0分\n请输入您要计算的加权的课程的数目:");
+	scanf("%d",&sum) ;
+	for (int i=0;i<sum;i++){
+	printf("请输入您要计算的加权的第%d门课程学分：",i+1);
+	scanf("%lf",&credit);
+	printf("请输入该门课程成绩：");
+	scanf("%lf",&grade);
+	if (grade<60) Y=0.0;
+    else if(grade<65) Y=1.0;
+        else if(grade<68) Y=1.5;
+            else if(grade<72) Y=2.0;
+             else if(grade<75) Y=2.5;
+                else if(grade<78) Y=2.8;
+                    else if(grade<82) Y=3.0;
+                        else if(grade<85) Y=3.5;
+                            else if(grade<90) Y=4.0;
+                                else if(grade<95) Y=4.5;
+                                    else if(grade<=100) Y=5.0;
+	 I+=credit*grade;                         
+	 C+=credit;                       
+	 Z+=credit*Y;                 
+	           }
+	X = I/C;       
+	V = Z/C;       
+	printf("您的加权平均分为:%f\n",X);   
+	printf("您的加权平均绩点为：%f\n",V);
+	system("pause");
+    return 0; 
+	}
